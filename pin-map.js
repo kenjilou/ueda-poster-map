@@ -162,8 +162,24 @@ getBoardPins(block, smallBlock).then(function(pins) {
 Promise.all([getProgress(), getProgressCountdown()]).then(function(res) {
   progress = res[0];
   progressCountdown = res[1];
-  progressBox((progress['total']*100).toFixed(2), 'topleft').addTo(map)
-  progressBoxCountdown((parseInt(progressCountdown['total'])), 'topleft').addTo(map)
+
+  const areaIdMap = {
+    'ueda': 1, 'shioda': 2, 'kawanishi': 3,
+    'maruko': 4, 'sanada': 5, 'takeishi': 6
+  };
+
+  let progressValue, countdownValue;
+  if (block != null && areaIdMap[block]) {
+    const areaId = areaIdMap[block];
+    progressValue = (progress[areaId]*100).toFixed(2);
+    countdownValue = parseInt(progressCountdown[areaId]);
+  } else {
+    progressValue = (progress['total']*100).toFixed(2);
+    countdownValue = parseInt(progressCountdown['total']);
+  }
+
+  progressBox(progressValue, 'topleft').addTo(map)
+  progressBoxCountdown(countdownValue, 'topleft').addTo(map)
 });
 
 loadVoteVenuePins(overlays['期日前投票所']);
