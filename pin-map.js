@@ -171,8 +171,8 @@ Promise.all([getProgress(), getProgressCountdown()]).then(function(res) {
   let progressValue, countdownValue;
   if (block != null && areaIdMap[block]) {
     const areaId = areaIdMap[block];
-    progressValue = (progress[areaId]*100).toFixed(2);
-    countdownValue = parseInt(progressCountdown[areaId]);
+progressValue = (progress[String(areaId)]*100).toFixed(2);
+countdownValue = parseInt(progressCountdown[String(areaId)]);
   } else {
     progressValue = (progress['total']*100).toFixed(2);
     countdownValue = parseInt(progressCountdown['total']);
