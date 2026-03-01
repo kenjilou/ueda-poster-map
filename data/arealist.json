@@ -1,26 +1,26 @@
 {
     "1": {
         "area_name": "上田地区",
-        "area_block": "上田市"
+        "area_block": "上田地区"
     },
     "2": {
         "area_name": "塩田地区",
-        "area_block": "上田市"
+        "area_block": "塩田地区"
     },
     "3": {
         "area_name": "川西地区",
-        "area_block": "上田市"
+        "area_block": "川西地区"
     },
     "4": {
         "area_name": "丸子地区",
-        "area_block": "上田市"
+        "area_block": "丸子地区"
     },
     "5": {
         "area_name": "真田地区",
-        "area_block": "上田市"
+        "area_block": "真田地区"
     },
     "6": {
         "area_name": "武石地区",
-        "area_block": "上田市"
+        "area_block": "武石地区"
     }
 }
