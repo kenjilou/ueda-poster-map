@@ -2,7 +2,7 @@ import pandas as pd
 import json
 import sys
 
-all_df = pd.read_csv('public/data/all.csv')
+all_df = pd.read_csv('data/all.csv')
 arealist_df = pd.read_csv('arealist.csv')
 
 # 各地域
