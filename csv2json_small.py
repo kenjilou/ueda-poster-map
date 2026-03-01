@@ -13,14 +13,14 @@ def main(input_path, output_path):
     merged_data = pd.merge(data, arealist, on='area_name', how='left', suffixes=('', ''))
 
     final_data = merged_data.copy()[['area_id', 'name', 'lat', 'long', 'status', 'note']]
-
+    
     area_blocks = {
-    'ueda': '上田市',
-    'shioda': '上田市',
-    'kawanishi': '上田市',
-    'maruko': '上田市',
-    'sanada': '上田市',
-    'takeishi': '上田市',
+    'ueda': '上田地区',
+    'shioda': '塩田地区',
+    'kawanishi': '川西地区',
+    'maruko': '丸子地区',
+    'sanada': '真田地区',
+    'takeishi': '武石地区',
 }
     
     for block_key, block_name in area_blocks.items():
