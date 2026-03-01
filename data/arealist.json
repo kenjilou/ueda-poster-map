@@ -1,0 +1,26 @@
+{
+    "1": {
+        "area_name": "上田地区",
+        "area_block": "上田市"
+    },
+    "2": {
+        "area_name": "塩田地区",
+        "area_block": "上田市"
+    },
+    "3": {
+        "area_name": "川西地区",
+        "area_block": "上田市"
+    },
+    "4": {
+        "area_name": "丸子地区",
+        "area_block": "上田市"
+    },
+    "5": {
+        "area_name": "真田地区",
+        "area_block": "上田市"
+    },
+    "6": {
+        "area_name": "武石地区",
+        "area_block": "上田市"
+    }
+}
