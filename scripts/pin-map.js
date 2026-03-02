@@ -190,5 +190,3 @@ Promise.all([getProgress(), getProgressCountdown()]).then(function(res) {
 });
 
 loadVoteVenuePins(overlays['期日前投票所']);
-
-loadVoteVenuePins(overlays['期日前投票所']);
