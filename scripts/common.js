@@ -62,7 +62,7 @@ function progressBox(progressValue, position){
 
       var div = L.DomUtil.create('div', 'info progress')
 
-      div.innerHTML += '<p>完了率 (全域)</p>'
+      div.innerHTML += `<p>完了率 (${areaLabel})</p>`
       div.innerHTML += `<p><span class="progressValue">${progressValue}</span>%</p>`
 
       return div;
