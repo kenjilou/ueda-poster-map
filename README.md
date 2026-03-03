@@ -20,9 +20,9 @@ https://anno-poster-map.netlify.app/
 - `/`: トップページ（各ポスターマップへのメニュー）
 - `/map`: ポスターマップ
     - `?block=BLOCKNAME` とパラメータを設定することで、特定の地区のみ表示可能
-    - `23-city`, `23-east`, `23-west`, `tama-north`, `tama-south`, `tama-west`, `island`
-    - 上田市バージョンでは、仮で地域設定をしています
-- `/summary`: 市区町村ごとの完了率をヒートマップとして可視化したマップ
+    - `ueda`, `shioda`, `kawanishi`, `maruko`, `sanada`, `takeishi`
+    - 上田市バージョンでは、6地域設定をしています
+- `/summary`: 作成中です
 - `/vote`: 期日前投票所のみを表示したマップ
 
 ## 環境
