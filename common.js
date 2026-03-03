@@ -56,20 +56,17 @@ async function loadVoteVenuePins(layer) {
 }
 
 
-function progressBox(progressValue, position){
+function progressBox(progressValue, areaLabel, position){
   var control = L.control({position: position});
   control.onAdd = function () {
-
       var div = L.DomUtil.create('div', 'info progress')
-
       div.innerHTML += `<p>完了率 (${areaLabel})</p>`
       div.innerHTML += `<p><span class="progressValue">${progressValue}</span>%</p>`
-
       return div;
   };
-
   return control
 }
+
 
 function progressBoxCountdown(progressValue, position){
   var control = L.control({position: position});
