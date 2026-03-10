@@ -1,32 +1,34 @@
+const _ts = new Date().getTime();
+
 async function getAreaList() {
-  const arealistResponse = await fetch('/ueda-poster-map/data/arealist.json');
+  const arealistResponse = await fetch(`/ueda-poster-map/data/arealist.json?t=${_ts}`);
   const arealist = await arealistResponse.json();
   return arealist;
 }
 
 async function getProgress() {
-  const progressResponse = await fetch('/ueda-poster-map/data/summary.json');
+  const progressResponse = await fetch(`/ueda-poster-map/data/summary.json?t=${_ts}`);
   const progress = await progressResponse.json();
   return progress;
 }
 
 async function getProgressCountdown() {
-  const progressResponse = await fetch('/ueda-poster-map/data/summary_absolute.json');
+  const progressResponse = await fetch(`/ueda-poster-map/data/summary_absolute.json?t=${_ts}`);
   const progress = await progressResponse.json();
   return progress;
 }
 
 async function getVoteVenuePins() {
-  const response = await fetch('/ueda-poster-map/data/vote_venue.json')
+  const response = await fetch(`/ueda-poster-map/data/vote_venue.json?t=${_ts}`)
   return response.json();
 }
 
 async function getBoardPins(block=null, smallBlock=null) {
   let response
   if (block==null) {
-    response = await fetch('/ueda-poster-map/data/all.json')
+    response = await fetch(`/ueda-poster-map/data/all.json?t=${_ts}`)
   } else {
-    response = await fetch(`/ueda-poster-map/data/block/${block}.json`)
+    response = await fetch(`/ueda-poster-map/data/block/${block}.json?t=${_ts}`)
   }
   const data = await response.json();
 
@@ -107,4 +109,3 @@ const grayIcon = L.icon({
   shadowSize: [32.8, 32.8],
   className: "icon-gray",
 });
-
