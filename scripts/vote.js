@@ -45,7 +45,7 @@ Promise.all([getAreaList()]).then(function(res) {
 
   for (let [key, areaInfo] of Object.entries(areaList)) {
     // console.log(areaInfo['area_name']);
-    fetch(`https://uedayou.net/loa/東京都${areaInfo['area_name']}.geojson`)
+    fetch(`https://uedayou.net/loa/長野県上田市.geojson`)
       .then((response) => {
         if (!response.ok) {
           throw new Error(`Failed to fetch geojson for ${areaInfo['area_name']}`);

@@ -163,10 +163,10 @@ Promise.all([getProgress(), getProgressCountdown()]).then(function(res) {
   progress = res[0];
   progressCountdown = res[1];
 
-  const areaIdMap = {
-    'ueda': 1, 'shioda': 2, 'kawanishi': 3,
-    'maruko': 4, 'sanada': 5, 'takeishi': 6
-  };
+const areaIdMap = {
+  'ueda': '1', 'shioda': '2', 'kawanishi': '3',
+  'maruko': '4', 'sanada': '5', 'takeishi': '6'
+};
 
   const areaNameMap = {
     'ueda': '上田地区', 'shioda': '塩田地区', 'kawanishi': '川西地区',
