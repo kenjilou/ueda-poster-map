@@ -109,12 +109,12 @@ const overlays = {
 };
 
 const mapConfig = {
-  'ueda':     { 'lat': 36.3953, 'long': 138.2594, 'zoom': 13 },
-  'shioda':   { 'lat': 36.3500, 'long': 138.2000, 'zoom': 13 },
-  'kawanishi':{ 'lat': 36.4200, 'long': 138.1800, 'zoom': 13 },
-  'maruko':   { 'lat': 36.4600, 'long': 138.1200, 'zoom': 13 },
-  'sanada':   { 'lat': 36.5200, 'long': 138.2300, 'zoom': 13 },
-  'takeishi': { 'lat': 36.4000, 'long': 138.0800, 'zoom': 13 },
+  'ueda':     { 'lat': 36.3953, 'long': 138.2594, 'zoom': 15 },
+  'shioda':   { 'lat': 36.3500, 'long': 138.2000, 'zoom': 15 },
+  'kawanishi':{ 'lat': 36.4200, 'long': 138.1800, 'zoom': 15 },
+  'maruko':   { 'lat': 36.4600, 'long': 138.1200, 'zoom': 15 },
+  'sanada':   { 'lat': 36.5200, 'long': 138.2300, 'zoom': 15 },
+  'takeishi': { 'lat': 36.4000, 'long': 138.0800, 'zoom': 15 },
 }
 
 const block = getBlockFromUrlParam()
@@ -122,7 +122,7 @@ const smallBlock = getSmallBlockFromUrlParam()
 let latlong, zoom;
 if (block == null) {
   latlong = [36.4018, 138.2490]
-  zoom = 13
+  zoom = 15
 } else {
   latlong = [mapConfig[block]['lat'], mapConfig[block]['long']]
   zoom = mapConfig[block]['zoom']
@@ -163,10 +163,10 @@ Promise.all([getProgress(), getProgressCountdown()]).then(function(res) {
   progress = res[0];
   progressCountdown = res[1];
 
-const areaIdMap = {
-  'ueda': '1', 'shioda': '2', 'kawanishi': '3',
-  'maruko': '4', 'sanada': '5', 'takeishi': '6'
-};
+  const areaIdMap = {
+    'ueda': 1, 'shioda': 2, 'kawanishi': 3,
+    'maruko': 4, 'sanada': 5, 'takeishi': 6
+  };
 
   const areaNameMap = {
     'ueda': '上田地区', 'shioda': '塩田地区', 'kawanishi': '川西地区',
