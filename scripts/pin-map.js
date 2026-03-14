@@ -85,7 +85,7 @@ function onLocationFound(e) {
   const locationMarker = L.marker(e.latlng).addTo(map)
     .bindPopup("現在地").openPopup();
   const locationCircle = L.circle(e.latlng, radius).addTo(map);
-  map.setView(e.latlng, 14);
+  //map.setView(e.latlng, 14);
 }
 
 function onLocationError(e) {
