@@ -78,7 +78,7 @@ async function loadBoardPins(pins, layer, status=null) {
     .addTo(layer);
     marker.bindPopup(`<b>${areaList[pin.area_id]["area_name"]} ${pin.name}</b><br>
       ステータス: ${getStatusText(pin.status)}<br>
-      担当者: ${getPinNote(pin.staff)}<br>
+      ${pin.staff ? '<br>担当者: ' + pin.staff : ''}
       備考: ${getPinNote(pin.note)}<br>
       座標: <a href="https://www.google.com/maps/search/${pin.lat},+${pin.long}" target="_blank" rel="noopener noreferrer">(${pin.lat}, ${pin.long})</a>`);
   });
