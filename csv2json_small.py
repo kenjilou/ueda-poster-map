@@ -12,7 +12,7 @@ def main(input_path, output_path):
     # ファイルサイズ削減のためarea_nameをarea_idで置換
     merged_data = pd.merge(data, arealist, on='area_name', how='left', suffixes=('', ''))
 
-    final_data = merged_data.copy()[['area_id', 'name', 'lat', 'long', 'status', 'note']]
+    final_data = merged_data.copy()[['area_id', 'name', 'lat', 'long', 'status', 'note','staff']]
     
     area_blocks = {
     'ueda': '上田地区',
