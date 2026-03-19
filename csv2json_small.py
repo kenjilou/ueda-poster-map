@@ -12,8 +12,13 @@ def main(input_path, output_path):
     # ファイルサイズ削減のためarea_nameをarea_idで置換
     merged_data = pd.merge(data, arealist, on='area_name', how='left', suffixes=('', ''))
 
-    final_data = merged_data.copy()[['area_id', 'name', 'lat', 'long', 'status', 'note','staff']]
-    
+    # staffが存在しない場合は空文字で補完
+    # Exp（ステータス表示用）とdenger（危険度）はJSON出力に含めない
+    if 'staff' not in merged_data.columns:
+        merged_data['staff'] = ''
+
+    final_data = merged_data.copy()[['area_id', 'name', 'lat', 'long', 'status', 'note', 'staff']]
+
     area_blocks = {
     'ueda': '上田地区',
     'shioda': '塩田地区',
@@ -22,11 +27,9 @@ def main(input_path, output_path):
     'sanada': '真田地区',
     'takeishi': '武石地区',
 }
-    
     for block_key, block_name in area_blocks.items():
         block_areas = arealist[arealist['area_block'] == block_name]['area_id']
         filtered_data = final_data[final_data['area_id'].isin(block_areas)]
-        
         filtered_output_path = os.path.join(output_path, 'block', f'{block_key}.json')
         filtered_data.to_json(filtered_output_path, orient='records', force_ascii=False)
         print(f"Filtered file saved to {filtered_output_path}")
