@@ -109,3 +109,21 @@ const grayIcon = L.icon({
   shadowSize: [32.8, 32.8],
   className: "icon-gray",
 });
+
+
+
+async function getConfig() {
+  const response = await fetch(`/ueda-poster-map/data/config.json?t=${_ts}`);
+  return response.json();
+}
+
+function posterNoBox(posterNo, position) {
+  var control = L.control({position: position});
+  control.onAdd = function () {
+    var div = L.DomUtil.create('div', 'info progress')
+    div.innerHTML += '<p>ポスタNo</p>'
+    div.innerHTML += `<p><span class="progressValue">${posterNo !== null ? posterNo : '未定'}</span></p>`
+    return div;
+  };
+  return control
+}

@@ -85,7 +85,6 @@ function onLocationFound(e) {
   const locationMarker = L.marker(e.latlng).addTo(map)
     .bindPopup("現在地").openPopup();
   const locationCircle = L.circle(e.latlng, radius).addTo(map);
-  map.setView(e.latlng, 15);
 }
 
 function onLocationError(e) {
@@ -159,9 +158,10 @@ getBoardPins(block, smallBlock).then(function(pins) {
   loadBoardPins(allBoardPins, overlays['未'], 0);
 });
 
-Promise.all([getProgress(), getProgressCountdown()]).then(function(res) {
+Promise.all([getProgress(), getProgressCountdown(), getConfig()]).then(function(res) {
   progress = res[0];
   progressCountdown = res[1];
+  const config = res[2];
 
   const areaIdMap = {
     'ueda': 1, 'shioda': 2, 'kawanishi': 3,
@@ -187,6 +187,7 @@ Promise.all([getProgress(), getProgressCountdown()]).then(function(res) {
 
   progressBox(progressValue, areaLabel, 'topleft').addTo(map)
   progressBoxCountdown(countdownValue, 'topleft').addTo(map)
+  posterNoBox(config.poster_no, 'topleft').addTo(map)
 });
 
 loadVoteVenuePins(overlays['期日前投票所']);
