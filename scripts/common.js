@@ -121,7 +121,7 @@ function posterNoBox(posterNo, position) {
   var control = L.control({position: position});
   control.onAdd = function () {
     var div = L.DomUtil.create('div', 'info progress')
-    div.innerHTML += '<p>ポスタNo</p>'
+    div.innerHTML += '<p>ポスタ貼付番号</p>'
     div.innerHTML += `<p><span class="progressValue">${posterNo !== null ? posterNo : '未定'}</span></p>`
     return div;
   };
