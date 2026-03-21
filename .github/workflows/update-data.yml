@@ -2,7 +2,7 @@ name: Update Map Data
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 */12 * * *'  # 12時間ごとに自動実行
+    - cron: '*/5 * * * *'  # 10分ごとに自動実行
 
 permissions:
   contents: write
